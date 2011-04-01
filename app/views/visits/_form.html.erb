@@ -1,0 +1,12 @@
+<%= form_for @visit do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :spot %><br />
+    <%= f.text_field :spot %>
+  </p>
+  <p>
+    <%= f.label :on %><br />
+    <%= f.date_select :on %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,19 @@
+<% title "Visits" %>
+
+<table>
+  <tr>
+    <th>Spot</th>
+    <th>On</th>
+  </tr>
+  <% for visit in @visits %>
+    <tr>
+      <td><%= visit.spot %></td>
+      <td><%= visit.on %></td>
+      <td><%= link_to "Show", visit %></td>
+      <td><%= link_to "Edit", edit_visit_path(visit) %></td>
+      <td><%= link_to "Destroy", visit, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Visit", new_visit_path %></p>

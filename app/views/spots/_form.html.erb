@@ -1,0 +1,16 @@
+<%= form_for @spot do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :count %><br />
+    <%= f.text_field :count %>
+  </p>
+  <p>
+    <%= f.label :nixed %><br />
+    <%= f.check_box :nixed %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
