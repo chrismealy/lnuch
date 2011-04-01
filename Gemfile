@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'sqlite3'
 
 group :development do
+  gem 'heroku'
   gem 'hirb'
   gem 'nifty-generators'
 end
