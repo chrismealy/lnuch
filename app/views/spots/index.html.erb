@@ -10,9 +10,9 @@
     <% total += spot.count %>
     <tr>
       <td>
-	<% if spot.nixed? %><strike><% end %>
+	<% if spot.nixed? %><strike style="color:red"><span style="color:black"><% end %>
 	<%= spot.name %>
-	<% if spot.nixed? %></strike><% end %>
+	<% if spot.nixed? %></span></strike><% end %>
       </td>
       <td align=center><%= spot.count %></td>
       <td><%= link_to "+", plus_spot_path(spot) %></td>
