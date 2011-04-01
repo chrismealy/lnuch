@@ -15,10 +15,12 @@
 	<% if spot.nixed? %></span></strike><% end %>
       </td>
       <td align=center><%= spot.count %></td>
+      <% if logged_in? %>
       <td><%= link_to "+", plus_spot_path(spot) %></td>
       <td><%= link_to "-", minus_spot_path(spot) %></td>
       <td><%= link_to "nix", nix_spot_path(spot) %></td>
       <td><%= link_to "edit", edit_spot_path(spot) %></td>
+      <% end %>
     </tr>
   <% end %>
   <tr>
@@ -27,8 +29,12 @@
   </tr>
 </table>
 
-<h3>New spot</h3>
+<% if logged_in? %>
+  <h3>New spot</h3>
+ 
+  <%= render 'form' %>
 
-<%= render 'form' %>
-
-
+  <p><%= link_to "Log out", logout_path %></p>
+<% else %>
+  <p><%= link_to "Log in", login_path %></p>
+<% end %>

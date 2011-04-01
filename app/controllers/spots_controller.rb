@@ -1,4 +1,13 @@
 class SpotsController < ApplicationController
+
+  before_filter :authorize, :except => [:index, :show]
+
+  def authorize
+    if not logged_in?
+      redirect_to spots_path
+    end
+  end
+
   def index
     @spots = Spot.order('count DESC,name')
     @spot = Spot.new
